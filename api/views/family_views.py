@@ -24,6 +24,7 @@ class Families(generics.ListCreateAPIView):
     def post(self, request):
         """Create request"""
         # Add user to request data object
+        print(request.data)
         request.data['family']['owner'] = request.user.id
         # Serialize/create family
         family = FamilySerializer(data=request.data['family'])

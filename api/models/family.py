@@ -14,7 +14,8 @@ class Family(models.Model):
   )
   owner = models.ForeignKey(
       get_user_model(),
-      on_delete=models.CASCADE
+      on_delete=models.CASCADE,
+      related_name='created_families'
   )
 
   def __str__(self):
