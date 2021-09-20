@@ -13,6 +13,10 @@ Stay in touch with your family
 ## Deployment
 
 ---
+## Unsolved Problems:
+when creating a family, the family members array does not populate with the members. right now, that code is commented out in the client side, but the backend does have a member field in the family model that alsways stays empty. 
+
+---
 ## Instructions:
 
 Contributions are always welcome! to do that, follow the steps below:
@@ -35,3 +39,10 @@ Commands are run with the syntax `python3 manage.py <command>`:
 | `makemigrations`  | Generate migration files based on changes to models  |
 | `migrate`  | Run migration files to migrate changes to db  |
 | `startapp`  | Create a new app  |
+
+---
+## Links:
+
+- [Family Time Client Repo](https://github.com/hadas21/family-time-client)
+- [Family Time deployed website]()
+- [Family Time deployed back end]()
