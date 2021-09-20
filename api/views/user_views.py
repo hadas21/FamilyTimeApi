@@ -20,6 +20,7 @@ class SignUp(generics.CreateAPIView):
     def post(self, request):
         # Pass the request data to the serializer to validate it
         user = UserRegisterSerializer(data=request.data['credentials'])
+
         # If that data is in the correct format...
         if user.is_valid():
             # Actually create the user using the UserSerializer (the `create` method defined there)
@@ -45,7 +46,7 @@ class SignIn(generics.CreateAPIView):
 
     def post(self, request):
         creds = request.data['credentials']
-        print(creds)
+
         # We can pass our email and password along with the request to the
         # `authenticate` method. If we had used the default user, we would need
         # to send the `username` instead of `email`.
