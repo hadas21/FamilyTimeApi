@@ -78,6 +78,14 @@ class SignOut(generics.DestroyAPIView):
         logout(request)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
+class Index(generics.ListCreateAPIView):
+    def get(self, request):
+        # get all users:
+        users = User.objects.all()
+        data = UserSerializer(users, many=True).data
+        return Response({'users': data})
+
 class ChangePassword(generics.UpdateAPIView):
     def partial_update(self, request):
         user = request.user
