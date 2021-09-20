@@ -44,5 +44,5 @@ Commands are run with the syntax `python3 manage.py <command>`:
 ## Links:
 
 - [Family Time Client Repo](https://github.com/hadas21/family-time-client)
-- [Family Time deployed website]()
-- [Family Time deployed back end]()
+- [Family Time deployed website](https://hadas21.github.io/family-time-client/)
+- [Family Time deployed back end](https://family-time-api.herokuapp.com/)
