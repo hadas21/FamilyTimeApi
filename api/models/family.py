@@ -1,22 +1,21 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from .parent import Parent
+# from .parent import Parent
 
 # Create your models here.
 class Family(models.Model):
   # define fields
   # https://docs.djangoproject.com/en/3.0/ref/models/fields/
   name = models.CharField(max_length=100)
-  members = models.ManyToManyField(
-      get_user_model(),
-      through=Parent,
-      through_fields=('family', 'member')
-  )
+  members = models.ManyToManyField(get_user_model())
   owner = models.ForeignKey(
       get_user_model(),
       on_delete=models.CASCADE,
       related_name='created_families'
   )
+
+  class Meta:
+    ordering = ['name']
 
   def __str__(self):
     # This must return a string

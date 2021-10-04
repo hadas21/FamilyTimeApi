@@ -2,13 +2,19 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from .models.family import Family
-from .models.user import User
+from .models.parent import Parent
 
 class FamilySerializer(serializers.ModelSerializer):
     class Meta:
         model = Family
         # fields = ('id', 'name', 'owner')
         fields = ('id', 'name', 'members', 'owner')
+
+# class ParentSerializer(serializers.ModelSerializer):
+
+#     class Meta:
+#         model = Parent
+#         fields = ('id', 'member', 'family')
 
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation
