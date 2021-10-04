@@ -97,3 +97,11 @@ class ChangePassword(generics.UpdateAPIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class Index(generics.ListCreateAPIView):
+
+    def get(self, request):
+        # get all users:
+        users = User.objects.all()
+        data = UserSerializer(users, many=True).data
+        return Response({'users': data})
